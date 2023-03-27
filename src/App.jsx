@@ -1,11 +1,12 @@
-import './App.css';
-import {login} from './Login.jsx';
+import "./App.css";
+import { Navbar } from "./Login";
+
 
 function App() {
   return (
     <div className="App">
       <h1>Hola Mundo</h1>
-      <login/>
+      <Navbar/>
     </div>
   );
 }

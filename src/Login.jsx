@@ -1,10 +1,10 @@
-import { miclick } from './click.jsx';
+import {clickeame} from './click'
 
-export const login = () => {
-  return <div>
-      <h1>Probando Desde Login</h1>
-      <p>hola desde login</p>
-      <button id="click" onclick={miclick}>click me</button>
-  </div>;
-};
-
+export const Navbar = ()=>{
+  return (
+    <div>
+      <h1>estoy en el Login</h1>
+      <button class ="boton"onClick={clickeame}>click me</button>
+    </div>
+  )
+}

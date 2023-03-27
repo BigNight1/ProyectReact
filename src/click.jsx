@@ -1,5 +1,3 @@
-
-export const miclick = ()=>{
-   console.log("hola desde la consola , me hiciste click")
+export const clickeame = () =>{
+    console.log("me clickeaste")
 }
-
