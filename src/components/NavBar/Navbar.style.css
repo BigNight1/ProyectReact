@@ -1,0 +1,22 @@
+.Navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: aqua;
+}
+
+.Title{
+    font-size: 2em;
+    
+}
+
+.cart{
+    font-size: 35px;
+}
+
+.nav-linkk{
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+    padding: 0px 15px;
+}

@@ -1,12 +1,12 @@
 import "./App.css";
-import { Navbar } from "./Login";
-
+import NavBar from "./components/NavBar/NavBar";
+import CartCambio from "./components/CartWidget/CartWidget";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hola Mundo</h1>
-      <Navbar/>
+      <NavBar/>
+      <CartCambio/>
     </div>
   );
 }
