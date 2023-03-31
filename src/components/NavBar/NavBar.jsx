@@ -6,21 +6,18 @@ const NavBar = () => {
   return (
     <div className="Navbar">
       <div className="Logo-Name">
-        <h1 className="Title">Nike Fake</h1>
+        <img className="logo-nike" src="https://res.cloudinary.com/dviah6ohx/image/upload/v1680224541/Img/Nike-Logo-No-Background_rlpwhn.png" alt="Logo de Nike" />
       </div>
       <div className="links">
-        <a href="" className="nav-linkk">
+        <a href="#" className="nav-linkk">
           Barato
         </a>
-        <a href="" className="nav-linkk">
+        <a href="#" className="nav-linkk">
           Caro
         </a>
-        <a href="" className="nav-linkk">
+        <a href="#" className="nav-linkk">
           Bonitos
-        </a>
-        <a href="">
-          <i className="cart bi bi-cart4"></i>
-        </a>
+        </a> 
       </div>
       
     </div>

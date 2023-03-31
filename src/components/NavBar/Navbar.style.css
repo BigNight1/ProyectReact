@@ -20,3 +20,12 @@
     color: black;
     padding: 0px 15px;
 }
+
+.Logo-Name{
+    display: flex;
+}
+
+.logo-nike{
+    height: 50px;
+    padding: 0px 5px;
+}
