@@ -1,12 +1,11 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
-import CartCambio from "./components/CartWidget/CartWidget";
 
 function App() {
+  let cartvalor = 0;
   return (
     <div className="App">
       <NavBar/>
-      <CartCambio/>
     </div>
   );
 }
