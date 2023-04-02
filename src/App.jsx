@@ -1,16 +1,13 @@
 import "./App.css";
 import NavBar from "./components/NavBar/NavBar";
-import Todo from "./components/Button/botones"
+import Funcional from "./components/Button/funciones";
 
 
 function App() {
-  let cartvalor = 0;
-
   return (
     <div className="App">
-      <NavBar valor={cartvalor}/>
-      <Todo valor={cartvalor}/>
-      
+      <NavBar />
+      <Funcional/>
     </div>
   );
 }

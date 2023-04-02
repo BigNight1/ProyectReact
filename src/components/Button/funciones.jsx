@@ -1,21 +1,31 @@
 import { useState } from "react";
-import Todo from "./botones";
+import Todo from "./botones"
 
-const Funcion = () => {
-  const [valor, setvalor] = useState(0);
+const Funcional = ()=>{
 
-  const sumar = () => {
-    setvalor(valor + 1);
-  };
-  const restar = () => {
-    setvalor(valor - 1);
-  };
+const [valor , setValor ] = useState(0)
+  
+const sumar = ()=>{
+  setValor( valor + 1 )
+}
+const restar = ()=>{
+  setValor( valor - 1 )
+}
+const multiplicar = ()=>{
+  setValor( valor * 2 )
+}
+const dividir = ()=>{
+  setValor( valor / 2 )
+}
 
-  return (
+const Resetear = ()=>{
+  setValor(0)
+}
+  return(
     <div>
-      <Todo sumar={sumar} restar={restar} />
+      <Todo valor={valor} sumar={sumar} restar={restar} multiplicar={multiplicar} dividir={dividir} Resetear={Resetear} />
     </div>
-  );
-};
+  )
+}
 
-export default Funcion;
+export default Funcional;
