@@ -7,7 +7,6 @@ const CartCambio = () => {
     <div>
       <BsFillCartCheckFill className="icon-carrito"/>
       <span>0</span>
-      
     </div>
   );
 };
