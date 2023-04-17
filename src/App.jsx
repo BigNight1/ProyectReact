@@ -1,13 +1,13 @@
 import "./App.css";
+import ItemComprar from "./components/CartBuy/Cart-B";
 import NavBar from "./components/NavBar/NavBar";
-import Funcional from "./components/Button/funciones";
 
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <Funcional/>
+      <ItemComprar/>
     </div>
   );
 }
