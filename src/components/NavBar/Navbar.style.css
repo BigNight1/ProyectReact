@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 .Navbar{
     display: flex;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: rgb(76, 145, 27);
+    background-color: rgb(45, 136, 152);
 }
 
 .Title{
@@ -19,6 +21,7 @@
     text-decoration: none;
     color: black;
     padding: 0px 15px;
+    font-family: 'Oswald', sans-serif;
 }
 
 .Logo-Name{

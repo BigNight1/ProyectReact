@@ -10,7 +10,8 @@ const ItemComprar = () => {
       resolve(products);
     });
 
-    tarea.then((res) => setItems(res)).catch((error) => console.log(error));
+    tarea.then((res) => setItems(res)).catch((error) => console.log(error))
+    // para traer la api
   }, []);
 
   return (

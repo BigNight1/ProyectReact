@@ -6,34 +6,52 @@ import {
   CardActions,
   Button,
 } from "@mui/material";
+import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 const ItemsCart = ({ items }) => {
   return (
-    <div style={{display: "flex",justifyContent: "space-evenly", flexWrap: "wrap", minHeight: "90hv", padding:"40px", }}>
+    <div className="row">
       {items.map((elemento) => {
         return (
-          <Card sx={{ width: 345, height: 350 }} key={elemento.id}>
-            <CardMedia
-              sx={{ height: 140 }}
-              image={elemento.img}
-              title="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-              {elemento.title}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {elemento.description}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                <span  style={{color: "blue", fontWeight: "700", fontSize: "1.5rem",}}>{elemento.price}</span>
-              </Typography>
-            </CardContent>
-            <CardActions style={{display: "flex", justifyContent: "center"}}>
-              <Button size="small">Comprar</Button>
-              <Button size="small">Ver más</Button>
-            </CardActions>
-          </Card>
+          <div className="col-6 col-md-6 col-lg-4 p-5" key={elemento.id}>
+            <Card sx={{ width: 315, height: 380 }}>
+              <CardMedia
+                sx={{ height: 180 }}
+                image={elemento.img}
+                title="green iguana"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {elemento.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {elemento.description}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  <span
+                    style={{
+                      color: "black",
+                      fontWeight: "700",
+                      fontSize: "1.5rem",
+                    }}
+                  >
+                    <span className="small">$</span>
+                    {elemento.price}
+                  </span>
+                </Typography>
+              </CardContent>
+              <CardActions
+                style={{ display: "flex", justifyContent: "center" }}
+              >
+                <Link to={`/itemDetail/${elemento.id}`}>
+                  <Button variant="contained" size="small">
+                    Ver más
+                  </Button>
+                </Link>
+              </CardActions>
+            </Card>
+          </div>
         );
       })}
     </div>

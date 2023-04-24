@@ -1,11 +1,12 @@
-import {BsFillCartCheckFill} from "react-icons/bs";
-import "./CartWidget-style.css"
+import { BsFillCartCheckFill } from "react-icons/bs";
+import "./CartWidget-style.css";
 
-
-const CartCambio = ({valor}) => {
+const CartCambio = ({ valor }) => {
   return (
     <div>
-      <BsFillCartCheckFill className="icon-carrito"/>
+      
+        <BsFillCartCheckFill className="icon-carrito"/>
+      
       <span>{valor}</span>
     </div>
   );
