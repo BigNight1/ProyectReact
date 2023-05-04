@@ -18,19 +18,15 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="links">
-          <a href="http://localhost:3000/" className="nav-linkk">
-            Barato
-          </a>
-          <a href="http://localhost:3000/" className="nav-linkk">
-            Caro
-          </a>
-          <a href="http://localhost:3000/" className="nav-linkk">
-            Bonitos
-          </a>
-          <Link to="/Carrito">
-            <CartCambio />
-          </Link>
+          <ul>
+            <Link to="/">TODAS</Link>
+            <Link to="/category/urbanas">URBANAS</Link>
+            <Link to="/category/deportivas">DEPORTIVAS</Link>
+          </ul>
         </div>
+        <Link to="/Carrito">
+          <CartCambio />
+        </Link>
       </div>
       <Outlet />
     </div>

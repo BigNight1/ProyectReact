@@ -43,5 +43,6 @@ export const ItemDetail = ({ product }) => {
         </CardActions>
       </Card>
     </div>
+    
   );
 };
