@@ -15,9 +15,9 @@ const ItemsCart = ({ items }) => {
       {items.map((elemento) => {
         return (
           <div className="col-6 col-md-6 col-lg-4 p-5" key={elemento.id}>
-            <Card sx={{ width: 315, height: 380 }}>
+            <Card sx={{ maxWidth: 300 }}>
               <CardMedia
-                sx={{ height: 180 }}
+                sx={{ height: 250 }}
                 image={elemento.img}
                 title="green iguana"
               />
@@ -25,7 +25,7 @@ const ItemsCart = ({ items }) => {
                 <Typography gutterBottom variant="h5" component="div">
                   {elemento.title}
                 </Typography>
-                <Typography variant="body2" color="text.secondary">
+                <Typography variant="h7" color="text.secondary">
                   {elemento.description}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">

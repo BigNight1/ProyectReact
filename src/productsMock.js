@@ -2,71 +2,74 @@
 export const products = [
     {
         id: 1,
-        title: "Nike 360",
+        title: "Polo de SuperMan",
         price: 30,
         stock: 2,
-        description: "Estas son las mejores zapatillas",
-        category: "deportivas",
-        img: "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669326932/free-metcon-4-zapatillas-de-entrenamiento-TQMCZg_fvia3m.png"
+        description: "Es una prenda clásica y atemporal que muestra tu amor por el Hombre de Acero",
+        category: "Peliculas",
+        img: "https://res.cloudinary.com/dviah6ohx/image/upload/v1683161571/Polos/Polo_de_SuperMan_eik6vi.webp"
     },
     {
         id: 2,
-        title: "wilson advance",
+        title: "Polo de Star Wars",
         price: 40,
         stock: 10,
-        description: "Ultra livianas y cuentan con camara de aire",
-        category: "deportivas",
-        img: "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430010/foc364fsakkzmausrovn.jpg"
+        description: "los polos de la saga también son una excelente manera de agregar un toque emocionante",
+        category: "Peliculas",
+        img: "https://res.cloudinary.com/dviah6ohx/image/upload/v1683161571/Polos/Polo_de_Star_War_iwfhog.webp"
     },
     {
         id: 3,
-        title: "Puma",
-        price: 50,
+        title: "Attack On Titan",
+        price: 40,
         stock: 3,
-        description: "Las clasicas zapatillas que van para cualquier momento del dia",
-        category: "urbanas",
-        img: "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430165/images_lujpmr.jpg"
+        description: "Son prendas de vestir cómodas, casuales y de alta calidad que pueden ser utilizadas en cualquier ocasión",
+        category: "Animes",
+        img: "https://res.cloudinary.com/dviah6ohx/image/upload/v1683161570/Polos/Polo_de_Attack_On_Titan_jfcrzc.webp"
     },
     {
         id: 4,
-        title: "Jaguar",
-        price: 60,
+        title: "Polo de Dragon ball",
+        price: 30,
         stock: 2,
-        description: "Zapatillas de ultima generacion para el deporte",
-        category: "urbanas",
-        img: "https://res.cloudinary.com/dnqfh2chg/image/upload/v1669430220/rtokwmt3j03bblbfhwhb.jpg"
+        description: "Estos polos son perfectos para los fans de Dragon Ball que quieren expresar su amor por la serie mientras visten con estilo",
+        category: "Animes",
+        img: "https://res.cloudinary.com/dviah6ohx/image/upload/v1683161570/Polos/Polo_de_Dragon_ball_ptn0d8.webp"
     },
     {
         id: 5,
-        title: "CORTEZ",
+        title: "Polo de Shenlong",
         price: 45,
         stock: 2,
-        description: "El primer gran modelo de la marca, unas zapatillas de running legendarias.",
-        img: "https://res.cloudinary.com/dviah6ohx/image/upload/v1682300814/nike-cortez-timeline-animation_dhbxtq.gif"
+        description: "Es una prenda de vestir fresca y casual que puede ser utilizada por personas de todas las edades",
+        category: "Animes",
+        img: "https://res.cloudinary.com/dviah6ohx/image/upload/v1683161570/Polos/Polo_de_Sheelong_Dragon_ball_ylmjld.webp"
     },
     {
         id: 6,
-        title: "BLAZER",
-        price: 67,
+        title: "Polo de Marvel",
+        price: 20,
         stock: 2,
-        description: "la empresa empezó a coquetear con otros deportes para ampliar público y mercado.",
-        img: "https://res.cloudinary.com/dviah6ohx/image/upload/v1682300813/nike-blazer-timeline_npfdpf.jpg"
+        description: "alta calidad, cómodo y casual; muestra imagen de personajes de cómics, perfecto para fans y eventos temáticos.",
+        category: "Peliculas",
+        img: "https://res.cloudinary.com/dviah6ohx/image/upload/v1683161570/Polos/Polo_de_Marvel_e0rjic.webp"
     },
     {
         id: 7,
-        title: "WAFFLE TRAINER",
-        price: 85,
+        title: "Polo de Batman",
+        price: 25,
         stock: 2,
-        description: "Las primeras zapatillas de la historia con suela Waffle.",
-        img: "https://res.cloudinary.com/dviah6ohx/image/upload/v1682300813/waffle-trainer-timeline-6b536ece49158441ff1d2bd282737c9b_dumu1m.jpg"
+        description: "El polo de Batman es una excelente opción para aquellos que quieren mostrar su amor por el personaje de Batman y su universo.",
+        category: "Peliculas",
+        img: "https://res.cloudinary.com/dviah6ohx/image/upload/v1683161570/Polos/Polo_de_Batman_fwkovt.webp"
     },
     {
         id: 8,
-        title: "DAYBREAK",
-        price: 100,
+        title: "Polo de Mashmello",
+        price: 50,
         stock: 2,
-        description: "La suela Waffle era uno de los puntos fuertes de las Daybreak, perfecta para corredores.",
-        img: "https://res.cloudinary.com/dviah6ohx/image/upload/v1682300814/nike-daybreak-timeline-2_p1cblc.jpg"
+        description: "Se puede usar como una prenda casual para el día a día",
+        img: "https://res.cloudinary.com/dviah6ohx/image/upload/v1683161570/Polos/Polo_de_Mashmello_kld6xi.webp"
     }
 
 ]
