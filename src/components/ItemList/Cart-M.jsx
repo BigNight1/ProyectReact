@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./cartstyles.css"
 
 const ItemsCart = ({ items }) => {
   return (
