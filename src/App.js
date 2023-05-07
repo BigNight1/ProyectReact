@@ -3,6 +3,7 @@ import ItemComprar from "./components/ItemList/Cart-B";
 import NavBar from "./components/NavBar/NavBar";
 import { ItemDetailContainer } from "./components/ItemDetail/ItemDetailContainer";
 import CartContainer from "./components/Cart/CartContainer";
+import  Form  from "./components/Form/Form";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/category/:categoryName" element={<ItemComprar />} />
           <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
           <Route path="/Carrito" element={<CartContainer />} />
+          <Route path="/Form" element={<Form />} />
           <Route path="*" element={<h1>no existe Error 404</h1>} />
         </Route>
       </Routes>
