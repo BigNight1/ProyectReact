@@ -7,6 +7,11 @@ const Form = () => {
     Numero: ""
   });
 
+  const handleChange = (e)=>{
+    setUserData({ ...UserData, [e.target.name]: e.target.value });
+
+  }
+
   const Enviarformulario = (e) => {
     e.preventDefault();
   };
@@ -20,27 +25,21 @@ const Form = () => {
       <form onSubmit={Enviarformulario} action="">
         <input
           type="text"
-          name="nombre"
+          name="Nombre"
           value={UserData.Nombre}
           placeholder="Ponga su Nombre"
-          onChange={(e) => {
-            setUserData({ ...UserData, Nombre: e.target.value });
-          }}
+          onChange={handleChange}
         />
 
         <input
           type="text"
-          name="apellido"
+          name="Apellido"
           value={UserData.Apellido}
           placeholder="Ponga su Apellido"
-          onChange={(e) => {
-            setUserData({ ...UserData, Apellido: e.target.value });
-          }}
+          onChange={handleChange}
         />
 
-        <input type="text" name="numero" value={UserData.Numero} onChange={(e)=>{
-          setUserData({ ...UserData, Numero: e.target.value})
-        }} placeholder="Ponga su Numero" />
+        <input type="text" name="Numero" value={UserData.Numero} onChange={handleChange} placeholder="Ponga su Numero" />
         <input type="submit" />
       </form>
     </div>

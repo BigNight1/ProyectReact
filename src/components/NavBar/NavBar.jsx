@@ -47,7 +47,7 @@ const NavBar = () => {
           <Link to="/Carrito">
             <CartCambio />
           </Link>
-          <Link to="/Form">Iniciar</Link>
+          <Link className={styles.buttonI} to="/Form">Iniciar</Link>
         </div>
       </div>
       <Outlet />
