@@ -42,3 +42,9 @@ a {
 .noActive{
   background-color: rgb(232, 255, 196);
 }
+
+.navcart{
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}

@@ -43,9 +43,12 @@ const NavBar = () => {
             Animes
           </NavLink>
         </div>
-        <Link to="/Carrito">
-          <CartCambio />
-        </Link>
+        <div className={styles.navcart}>
+          <Link to="/Carrito">
+            <CartCambio />
+          </Link>
+          <Link to="/Form">Iniciar</Link>
+        </div>
       </div>
       <Outlet />
     </div>
