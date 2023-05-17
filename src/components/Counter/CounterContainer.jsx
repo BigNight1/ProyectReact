@@ -13,9 +13,9 @@ const CounterContainer = () => {
     }
   return (
     <div>
-        <CounterPresentation/>
+        <CounterPresentation counter={counter} sumar={sumar} restar={restar} />
     </div>
-  )
+  ) 
 }
 
 export default CounterContainer

@@ -1,9 +1,14 @@
-import React from 'react'
+import {IconButton} from "@mui/material";
 
-const CounterPresentation = () => {
+
+const CounterPresentation = ({ counter, sumar, restar }) => {
   return (
-    <div>CounterPresentation</div>
-  )
-}
+    <div style={{ display: "flex", gap: "10px", marginLeft:"10px"}}>
+      <IconButton onClick={sumar} style={{fontSize: "16px"}}>Sumar</IconButton>
+      <h3>{counter}</h3>
+      <IconButton onClick={restar} style={{fontSize: "16px"}}>Restar</IconButton>
+    </div>
+  );
+};
 
-export default CounterPresentation
+export default CounterPresentation;

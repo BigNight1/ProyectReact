@@ -9,10 +9,12 @@ import {
 } from "@mui/material";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import CounterContainer from "../Counter/CounterContainer";
 
 export const ItemDetail = ({ product }) => {
   return (
-    <div className="p-4">
+    <div className="p-4" style={{display: "flex",
+    justifyContent:"center"}}>
       <Card sx={{ maxWidth: 300 }}>
         <CardMedia
           component="img"
@@ -24,25 +26,31 @@ export const ItemDetail = ({ product }) => {
           <Typography gutterBottom variant="h5" component="div">
             {product.title}
           </Typography>
-          <Typography variant="h5" color="text.secondary">
+          <Typography variant="h6" color="text.primary">
             {product.description}
+          </Typography>
+          <Typography variant="h6" color="text.secondary">
+            Stock: {product.stock}
           </Typography>
           <Typography variant="h6" color="text.secondary">
             Price: {product.price}
           </Typography>
         </CardContent>
-        <CardActions>
+        <CardActions
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            gap: "20px",
+          }}
+        >
+          <CounterContainer/>
           <Link to="/">
             <Button variant="contained" size="small" className="mx-2">
               Volver
             </Button>
           </Link>
-          <Button variant="contained" size="small" className="mx-2">
-            Buy
-          </Button>
         </CardActions>
       </Card>
     </div>
-    
   );
 };
