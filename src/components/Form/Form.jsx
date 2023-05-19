@@ -16,7 +16,7 @@ const Form = () => {
     e.preventDefault();
   };
 
-  console.log(UserData);
+  
 
   return (
     <div>

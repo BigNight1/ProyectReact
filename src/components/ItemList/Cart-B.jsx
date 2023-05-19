@@ -8,7 +8,6 @@ const ItemComprar = () => {
   const [items, setItems] = useState([]);
 
   const {categoryName} = useParams()
-  console.log(categoryName)
 
   useEffect(() => {
 
