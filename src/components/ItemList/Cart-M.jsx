@@ -15,12 +15,12 @@ const ItemsCart = ({ items }) => {
     <div className="row">
       {items.map((elemento) => {
         return (
-          <div className="col-6 col-md-6 col-lg-4 p-5" key={elemento.id}>
-            <Card sx={{ maxWidth: 300 }}>
+          <div className="col-6 col-md-6 col-lg-4 p-5" key={elemento.id} >
+            <Card style={{borderRadius:"15px"}} sx={{ maxWidth: 350 }}>
               <CardMedia
-                sx={{ height: 250 }}
+                sx={{ height:300 }}
                 image={elemento.img}
-                title="green iguana"
+                title={elemento.title}
               />
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">

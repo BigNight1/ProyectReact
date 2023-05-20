@@ -5,6 +5,8 @@ import { ItemDetailContainer } from "./components/ItemDetail/ItemDetailContainer
 import CartContainer from "./components/Cart/CartContainer";
 import Form from "./components/Form/Form";
 import CartContextProvider from "./context/CartContext";
+import FormCheckoutContainer from "./components/FormCheckout/FormCheckoutContainer";
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
             <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
             <Route path="/Carrito" element={<CartContainer />} />
             <Route path="/Form" element={<Form />} />
+            <Route path="/Checkout" element={<FormCheckoutContainer />} />
             <Route path="*" element={<h1>no existe Error 404</h1>} />
           </Route>
         </Routes>

@@ -11,11 +11,11 @@ import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import CounterContainer from "../Counter/CounterContainer";
 
-export const ItemDetail = ({ product , onAdd }) => {
+export const ItemDetail = ({ product , onAdd , cantidadTotal}) => {
   return (
     <div className="p-4" style={{display: "flex",
-    justifyContent:"center"}}>
-      <Card sx={{ maxWidth: 500 }}>
+    justifyContent:"center", }}>
+      <Card style={{borderRadius:"15px"}} sx={{ maxWidth: 450 }}>
         <CardMedia
           component="img"
           sx={{ maxheight: 250 }}
@@ -43,7 +43,10 @@ export const ItemDetail = ({ product , onAdd }) => {
             gap: "20px",
           }}
         >
-          <CounterContainer stock={product.stock} onAdd={onAdd}/>
+          {
+            product.stock > 0 ? <CounterContainer stock={product.stock} onAdd={onAdd} initial={cantidadTotal}/> : <h3>no hay stock</h3>
+          }
+          
           <Link to="/">
             <Button variant="contained" size="small" className="mx-2">
               Volver
