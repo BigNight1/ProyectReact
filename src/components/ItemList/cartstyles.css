@@ -1,4 +1,11 @@
-.row{
-    --bs-gutter-x: 0;
-    background-color: rgb(189, 166, 181);
+.row {
+  --bs-gutter-x: 0;
+  background-color: rgb(189, 166, 181);
+  min-height: 100vh;
+}
+
+@media (min-width: 1200px) {
+  .cartita {
+    width: 330px;
+  }
 }

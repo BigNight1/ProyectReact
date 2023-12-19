@@ -1,7 +1,7 @@
+import { useContext, useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import FormCheckout from "./FormCheckout";
-import { useContext, useState } from "react";
 import { CartContext } from "../../context/CartContext";
 import { db } from "../../firebaseConfig";
 import {
@@ -29,13 +29,13 @@ const FormCheckoutContainer = () => {
     const ordensCollection = collection(db, "orders");
     addDoc(ordensCollection, dataOrder).then((res) => setOrderId(res.id));
 
-    cart.map((product) => 
+    cart.map((product) =>
       updateDoc(doc(db, "products", product.id), {
         stock: product.stock - product.quantity,
       })
     );
 
-    clearCart()
+    clearCart();
   };
 
   const { handleSubmit, handleChange, errors, values } = useFormik({
@@ -61,10 +61,14 @@ const FormCheckoutContainer = () => {
   return (
     <div>
       {orderId ? (
-        
-        <h1 style={{ display: "flex", justifyContent: "center" }}>
-          Gracias por Comprar su Id es : {orderId}
-        </h1>
+        <div>
+          <h2 style={{ display: "flex", justifyContent: "center" }}>
+            Gracias por Comprar {values.nombre} 
+          </h2>
+          <h3>Id De la Compra : {orderId}  </h3>
+          <p>a este correo enviamos la información de la compra: {values.email}</p>
+          <p>Si tiene algún problema con su compra con el Id podemos idenfiticar rapido lo que paso </p>
+        </div>
       ) : (
         <FormCheckout
           errors={errors}

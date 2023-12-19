@@ -1,12 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
 .containernavbar {
-  height: 10vh;
+  height: 80px;
   display: flex;
   justify-content: space-between;
-  background-color: rgb(138, 184, 180);
   align-items: center;
-  padding: 10px;
+  background-color: rgb(40, 46, 45);
 }
 
 .logonike {
@@ -16,8 +15,9 @@
 
 .navcart {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 1.4rem;
+  padding: 0 1rem;
 }
 
 .buttonI {
@@ -42,12 +42,10 @@ a{
 
 .cc {
   background-color: beige;
-  padding: 10px 20px;
+  padding: 10px 1rem;
   color: #7F669D;
-  width: 100px;
   display: flex;
   justify-content: center;
   border-radius: 10px;
-  margin-left: 15px;
 }
 

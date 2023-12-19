@@ -1,8 +1,20 @@
+import { useContext } from "react";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import { CartContext } from "../../context/CartContext.jsx";
 import "./Cart.css";
 
-const Cart = ({ cart, clearCartWithAlert, deleteProductById, total, navigate }) => {
+const Cart = ({
+  cart,
+  clearCartWithAlert,
+  deleteProductById,
+  total,
+  navigate,
+}) => {
+  const { getTotalQuantity } = useContext(CartContext);
+
+  let totalProduct = getTotalQuantity();
+
   return (
     <div>
       <div className="cart-container">
@@ -27,14 +39,15 @@ const Cart = ({ cart, clearCartWithAlert, deleteProductById, total, navigate }) 
           })}
         </div>
         <div className="cart-info">
-          <h2>Descripcion del carrito:</h2>
-          <h3>Cantidad de productos: </h3>
+          <h3>Cantidad de productos: {totalProduct} </h3>
           <h3>Precio total: {total}</h3>
-          <h3>Descuento: </h3>
-          <h3>Precio final: </h3>
+          <h3>Descuento: %</h3>
+
           {cart.length > 0 ? (
             <div className="btn-cart">
-              <Button variant="contained" onClick={()=>navigate("/checkout")}>Terminar la compra</Button>
+              <Button variant="contained" onClick={() => navigate("/checkout")}>
+                Terminar la compra
+              </Button>
               <Button onClick={clearCartWithAlert} variant="contained">
                 Vaciar carrito
               </Button>
@@ -45,7 +58,8 @@ const Cart = ({ cart, clearCartWithAlert, deleteProductById, total, navigate }) 
             </Link>
           )}
 
-          <h1>El total del carrito es ${total}</h1>
+          <h1>Precio final: ${total}</h1>
+          {/* Quiero aplicar un descuento  de 10% pero todavia no tengo una idea de como hacerlo  */}
         </div>
       </div>
     </div>

@@ -1,47 +1,55 @@
 import { useState } from "react";
+import "./Form.css";
 
 const Form = () => {
   const [UserData, setUserData] = useState({
-    Nombre: "",
-    Apellido: "",
-    Numero: ""
+    Correo_Electronico: "",
+    Contraseña: "",
   });
 
-  const handleChange = (e)=>{
+  const handleChange = (e) => {
     setUserData({ ...UserData, [e.target.name]: e.target.value });
-
-  }
+  };
 
   const Enviarformulario = (e) => {
     e.preventDefault();
   };
 
-  
-
   return (
-    <div>
-      <h1>Estoy en el formulario</h1>
-
-      <form onSubmit={Enviarformulario} action="">
-        <input
-          type="text"
-          name="Nombre"
-          value={UserData.Nombre}
-          placeholder="Ponga su Nombre"
-          onChange={handleChange}
-        />
-
-        <input
-          type="text"
-          name="Apellido"
-          value={UserData.Apellido}
-          placeholder="Ponga su Apellido"
-          onChange={handleChange}
-        />
-
-        <input type="text" name="Numero" value={UserData.Numero} onChange={handleChange} placeholder="Ponga su Numero" />
-        <input type="submit" />
-      </form>
+    <div className="caja_form">
+      <div className="caja_contenedora">
+        <h2>Inicio de Sesión</h2>
+        <div className="forma">
+          <form onSubmit={Enviarformulario} action="">
+            <div>
+              <input
+                type="text"
+                name="Correo_Electronico"
+                value={UserData.Correo_Electronico}
+                placeholder="Correo Electronico"
+                onChange={handleChange}
+              />
+            </div>
+            <div>
+              <input
+                type="text"
+                name="Contraseña"
+                value={UserData.Contraseña}
+                placeholder="Contraseña"
+                onChange={handleChange}
+              />
+            </div>
+          </form>
+        </div>
+        <div className="boton_enviar">
+          <button className="boton_submit" type="submit">
+            Iniciar Sesion
+          </button>
+          <button className="boton_submit" type="submit">
+           Register
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

@@ -13,6 +13,7 @@ const FormCheckout = ({ handleSubmit, handleChange, errors, values }) => {
               variant="outlined"
               fullWidth
               name="nombre"
+             
               onChange={handleChange}
               error={errors.nombre ? true : false}
               helperText={errors.nombre}

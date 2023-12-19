@@ -32,7 +32,7 @@ const NavBar = () => {
           <Link to="/">
             <img
               className="logonike"
-              src="https://res.cloudinary.com/dviah6ohx/image/upload/v1680224541/Img/Nike-Logo-No-Background_rlpwhn.png"
+              src="/Borcelle.png"
               alt="Logo de Nike"
             />
           </Link>
@@ -50,9 +50,10 @@ const NavBar = () => {
             <CartCambio />
           </Link>
           <Link className="buttonI" to="/Form">
-            Iniciar
+          <i className="bi bi-person-circle" style={{fontSize:"1.7rem"}}></i>
           </Link>
         </div>
+        
       </div>
       <Outlet />
     </div>
