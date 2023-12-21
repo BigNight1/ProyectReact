@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
 .containernavbar {
-  height: 80px;
+  height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;

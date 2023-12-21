@@ -41,8 +41,8 @@ const Cart = ({
         <div className="cart-info">
           <h3>Cantidad de productos: {totalProduct} </h3>
           <h3>Precio total: {total}</h3>
-          <h3>Descuento: %</h3>
-
+          {/* <h3>Descuento: %</h3> */}
+          {/* despues voy a poner un descuento  */}
           {cart.length > 0 ? (
             <div className="btn-cart">
               <Button variant="contained" onClick={() => navigate("/checkout")}>
