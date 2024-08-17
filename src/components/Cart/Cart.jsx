@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Button } from "@mui/material";
+import { Button, Tooltip } from "@mui/material";
 import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext.jsx";
 import "./Cart.css";
@@ -12,55 +12,77 @@ const Cart = ({
   navigate,
 }) => {
   const { getTotalQuantity } = useContext(CartContext);
-
-  let totalProduct = getTotalQuantity();
+  const totalProduct = getTotalQuantity();
 
   return (
-    <div>
-      <div className="cart-container">
-        <div className="container-items">
-          {cart.map((item) => {
-            return (
-              <div key={item.id} className="cart-item">
-                <img src={item.img} alt="" />
-                <div className="cart-item-info">
-                  <h2>{item.name}</h2>
-                  <h2>${item.price}.</h2>
-                  <h2>Unidades: {item.quantity}</h2>
-                </div>
-                <Button
-                  variant="contained"
-                  onClick={() => deleteProductById(item.id)}
-                >
-                  Quitar
-                </Button>
-              </div>
-            );
-          })}
-        </div>
-        <div className="cart-info">
-          <h3>Cantidad de productos: {totalProduct} </h3>
-          <h3>Precio total: {total}</h3>
-          {/* <h3>Descuento: %</h3> */}
-          {/* despues voy a poner un descuento  */}
-          {cart.length > 0 ? (
-            <div className="btn-cart">
-              <Button variant="contained" onClick={() => navigate("/checkout")}>
-                Terminar la compra
-              </Button>
-              <Button onClick={clearCartWithAlert} variant="contained">
-                Vaciar carrito
-              </Button>
+    <div className="cart-container">
+      <div className="container-items">
+        {cart.map((item) => (
+          <div key={item.id} className="cart-item">
+            <Tooltip title={item.title} arrow placement="top">
+              <img
+                src={item.img}
+                alt={item.title}
+                className="cart-item-image"
+              />
+            </Tooltip>
+            <div className="cart-item-info">
+              <h4 className="cart-item-title">{item.title}</h4>
+              <p className="cart-item-price">${item.price}</p>
+              <p className="cart-item-quantity">Unidades: {item.quantity}</p>
             </div>
-          ) : (
-            <Link to="/">
-              <Button variant="contained">Agrega productos</Button>
-            </Link>
-          )}
+            
+            <Button
+              variant="outlined"
+              color="secondary"
+              onClick={() => deleteProductById(item.id)}
+              className="cart-item-remove-button"
+            >
+              Quitar
+            </Button>
+          </div>
+        ))}
+      </div>
 
-          <h1>Precio final: ${total}</h1>
-          {/* Quiero aplicar un descuento  de 10% pero todavia no tengo una idea de como hacerlo  */}
+      <div className="cart-info">
+        <div className="cart-summary">
+          <div className="cart-summary-item">
+            <span className="cart-summary-label">Cantidad de productos:</span>
+            <span className="cart-summary-value">{totalProduct}</span>
+          </div>
+          <div className="cart-summary-item">
+            <span className="cart-summary-label">Precio total:</span>
+            <span className="cart-summary-value font-semibold">${total}</span>
+          </div>
         </div>
+        {cart.length > 0 ? (
+          
+          <div className="cart-actions">
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={() => navigate("/checkout")}
+              className="cart-checkout-button"
+            >
+              Terminar la compra
+            </Button>
+            
+            <Button
+              onClick={clearCartWithAlert}
+              variant="contained"
+              color="error"
+              className="cart-clear-button"
+            >
+              Vaciar carrito
+            </Button>
+          </div>
+        ) : (
+          <Link to="/">
+            <Button variant="contained" color="primary">
+              Agrega productos
+            </Button>
+          </Link>
+        )}
       </div>
     </div>
   );

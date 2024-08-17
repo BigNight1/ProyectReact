@@ -49,7 +49,7 @@ const NavBar = () => {
           <Link to="/Carrito">
             <CartCambio />
           </Link>
-          <Link className="buttonI" to="/Form">
+          <Link className="buttonI" to="/Iniciar">
           <i className="bi bi-person-circle" style={{fontSize:"1.7rem"}}></i>
           </Link>
         </div>

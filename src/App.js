@@ -18,7 +18,7 @@ function App() {
             <Route path="/category/:categoryName" element={<ItemComprar />} />
             <Route path="/itemDetail/:id" element={<ItemDetailContainer />} />
             <Route path="/Carrito" element={<CartContainer />} />
-            <Route path="/Form" element={<Form />} />
+            <Route path="/Iniciar" element={<Form />} />
             <Route path="/Checkout" element={<FormCheckoutContainer />} />
             <Route path="*" element={<h1>no existe Error 404</h1>} />
           </Route>

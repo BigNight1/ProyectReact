@@ -14,28 +14,38 @@ import {
 
 const FormCheckoutContainer = () => {
   const { cart, getTotalPrice, clearCart } = useContext(CartContext);
-
   const [orderId, setOrderId] = useState(null);
 
-  const checkoutFn = (data) => {
-    let total = getTotalPrice();
+  const checkoutFn = async (data) => {
+    const total = getTotalPrice();
 
-    let dataOrder = {
+    const dataOrder = {
       buyer: data,
       items: cart,
       total: total,
       date: serverTimestamp(),
     };
-    const ordensCollection = collection(db, "orders");
-    addDoc(ordensCollection, dataOrder).then((res) => setOrderId(res.id));
 
-    cart.map((product) =>
-      updateDoc(doc(db, "products", product.id), {
-        stock: product.stock - product.quantity,
-      })
-    );
+    try {
+      // Add order to Firestore
+      const ordersCollection = collection(db, "orders");
+      const orderRef = await addDoc(ordersCollection, dataOrder);
+      setOrderId(orderRef.id);
 
-    clearCart();
+      // Update product stock
+      await Promise.all(
+        cart.map((product) =>
+          updateDoc(doc(db, "products", product.id), {
+            stock: product.stock - product.quantity,
+          })
+        )
+      );
+
+      // Clear cart
+      clearCart();
+    } catch (error) {
+      console.error("Error processing the order: ", error);
+    }
   };
 
   const { handleSubmit, handleChange, errors, values } = useFormik({
@@ -47,27 +57,27 @@ const FormCheckoutContainer = () => {
     onSubmit: checkoutFn,
     validationSchema: Yup.object().shape({
       nombre: Yup.string()
-        .required("este campo es obligatorio")
-        .min(3, "el nombre debe tener al menos 3 caracteres")
-        .max(10, "el nombre no puede superar los 10 caracteres"),
+        .required("Este campo es obligatorio")
+        .min(3, "El nombre debe tener al menos 3 caracteres")
+        .max(10, "El nombre no puede superar los 10 caracteres"),
       email: Yup.string()
-        .email("El campo debe ser un email")
-        .required("este campo es obligatorio"),
-      password: Yup.string().required("este campo es obligatorio"),
+        .email("El campo debe ser un email válido")
+        .required("Este campo es obligatorio"),
+      password: Yup.string().required("Este campo es obligatorio"),
     }),
     validateOnChange: false,
   });
 
   return (
-    <div>
+    <div className="p-6 max-w-lg mx-auto">
       {orderId ? (
-        <div>
-          <h2 style={{ display: "flex", justifyContent: "center" }}>
-            Gracias por Comprar {values.nombre} 
+        <div className="text-center">
+          <h2 className="text-2xl font-semibold text-blue-600 mb-4">
+            ¡Gracias por tu compra, {values.nombre}!
           </h2>
-          <h3>Id De la Compra : {orderId}  </h3>
-          <p>a este correo enviamos la información de la compra: {values.email}</p>
-          <p>Si tiene algún problema con su compra con el Id podemos idenfiticar rapido lo que paso </p>
+          <h3 className="text-xl text-gray-800 mb-2">ID de la compra: {orderId}</h3>
+          <p className="text-gray-600 mb-2">Hemos enviado la información de tu compra a: {values.email}</p>
+          <p className="text-gray-600">Si tienes algún problema, usa este ID para que podamos identificar rápidamente tu compra.</p>
         </div>
       ) : (
         <FormCheckout

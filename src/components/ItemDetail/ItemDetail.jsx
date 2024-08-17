@@ -4,7 +4,7 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  Button,
+  Tooltip,
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
@@ -24,14 +24,25 @@ export const ItemDetail = ({ product, onAdd, cantidadTotal }) => {
             alignSelf: "flex-start",
             marginLeft: "0.5rem",
             marginTop: "0.5rem",
-            display:"flex"
+            display: "flex",
           }}
         >
+          <Tooltip title="Volver" PopperProps={{
+        modifiers: [
+          {
+            name: 'offset',
+            options: {
+              offset: [0, -15], // Ajusta el segundo valor para cambiar la distancia vertical
+            },
+          },
+        ],
+      }}>
           <Link to="/">
             <FaArrowAltCircleLeft
               style={{ color: "black", fontSize: "2.3rem", margin: "0.5rem" }}
             />
           </Link>
+          </Tooltip>
         </div>
         <Card style={{ borderRadius: "15px" }} sx={{ maxWidth: 400 }}>
           <CardMedia
@@ -51,9 +62,10 @@ export const ItemDetail = ({ product, onAdd, cantidadTotal }) => {
               Stock: {product.stock}
             </Typography>
             <Typography variant="h6" color="text.secondary">
-              Price: {product.price}
+              Price: ${product.price}
             </Typography>
           </CardContent>
+
           <CardActions
             style={{
               display: "flex",
@@ -71,6 +83,7 @@ export const ItemDetail = ({ product, onAdd, cantidadTotal }) => {
               <h3>no hay stock</h3>
             )}
           </CardActions>
+
         </Card>
       </div>
     </div>
